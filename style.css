@@ -1,0 +1,197 @@
+/* COLOR PALTTES
+------------------------
+## Colors
+
+### Primary
+
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+### Neutral
+
+Light gray: hsl(0, 0%, 81%)
+Light grayish blue: hsl(210, 46%, 95%)
+
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+----------------------- */
+
+
+/* GLOBAL STYLES
+----------------------- */
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h2,
+h3 {
+    margin: 0;
+}
+
+/* GLOBAL STYLES
+------------ */
+body {
+    background: hsl(210, 46%, 95%);
+    font-family: Barlow Semi Condensed;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 0;
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    /* ----- */
+    display: grid;
+    place-content: center;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 500;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+/* GLOBAL ARTICLE STYLES
+----------------------- */
+article {
+    border-radius: 0.5rem;
+    padding: 2rem;
+    font-size: 13px;
+    text-align: left;
+    box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(0, 0%, 81%);
+}
+
+article img {
+    border-radius: 50%;
+    width: 30px;
+}
+
+main {
+    padding-block: 2rem;
+    width: min(95%, 70rem);
+    margin-inline: auto;
+    /* grid display */
+    display: grid;
+    gap: 1.25rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        'one'
+        'two'
+        'three'
+        'four'
+        'five';
+
+}
+
+.flex-author {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}
+
+.author-particulars {
+    margin: 0;
+    align-self: center;
+    padding: 13px;
+}
+
+.author-particulars p {
+    margin: 0;
+    opacity: 50%;
+    font-size: 11px;
+}
+
+article p {
+    opacity: 70%;
+}
+
+
+/* WILLIAM ARTICLE */
+
+.the-first-problematic-one {
+    background: hsl(263, 55%, 52%) url(/images/bg-pattern-quotation.svg) no-repeat;
+    background-position: top right 10%;
+    color: hsl(210, 46%, 95%);
+    grid-area: one;
+}
+
+/* JONATHAN ARTICLE */
+.grid-jonathan {
+    background-color: hsl(217, 19%, 35%);
+    color: hsl(210, 46%, 95%);
+    grid-area: two;
+}
+
+/* JEANETTE ARTICLE */
+.grid-jeanette {
+    background-color: hsl(0, 0%, 100%);
+    color: hsl(217, 19%, 35%);
+    grid-area: three;
+}
+
+/* PATRICK ARTICLE */
+.grid-patrick {
+    background: hsl(219, 29%, 14%);
+    color: hsl(0, 0%, 100%);
+    grid-area: four;
+}
+
+/* KIRA ARTICLE */
+.grid-kira {
+    background: hsl(0, 0%, 100%);
+    color: hsl(219, 29%, 14%);
+    grid-area: five;
+}
+
+/* MEDIA QUERIES FOR SCREENS LARGER THAN 375PX
+-------------------------- */
+@media screen and (min-width:600px) {
+    main {
+        grid-template-areas:
+            'one one'
+            'two three'
+            'four four'
+            'five five'
+        ;
+    }
+}
+
+@media screen and (min-width:950px) {
+    main {
+        grid-template-areas:
+            'one one two'
+            'three four four'
+            'five five five'
+        ;
+    }
+}
+
+@media screen and (min-width:1200px) {
+    main {
+        grid-template-areas:
+            'one one two five'
+            'three four four five'
+    }
+
+}
